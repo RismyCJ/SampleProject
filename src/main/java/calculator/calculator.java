@@ -26,7 +26,7 @@ class calculator extends JFrame implements ActionListener {
 	public static void main(String args[])
 	{
 
-                System.out.println("Calculator Testing....");
+                System.out.println("Calculator Testing.....");
 		
 		// create a frame
 		f = new JFrame("calculator");
