@@ -1,4 +1,4 @@
-name: Build on Local Server
+name: Build on Local Machine
 
 on:
   push:
@@ -7,13 +7,19 @@ on:
 
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
+
+    inputs:
+      local-folder-path:
+        description: 'Path to the local folder for build'
+        required: true
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Trigger build on local server
-      run: |
-        # Add your command to trigger build on your local server
-         ssh  192.168.100.86 "cd D:\Demo\calc && ./build_script.sh"
+      - name: Run build locally
+        run: |
+          cd ${{ D:\Demo\github build }}
+          # Add your build commands here
+          # Example: make build
